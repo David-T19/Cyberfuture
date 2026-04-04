@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Búsqueda - Facturas y Alumnos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet"type="text/css" href="Alumno.css"><!--CSS-->
+</head>
+<body>
+    <div class="main-container">
+        <!-- Encabezado -->
+        <div class="header">
+            <!-- En cualquier parte de la página -->
+  <button id="btnCerrarSesion">
+                <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
+            </button>
+            <h1><i class="fas fa-search me-2"></i> Sistema de Búsqueda</h1>
+            <p>Busca tus facturas y datos personales de forma independiente</p>
+            
+            <!-- Estadísticas -->
+            <div class="stats-container">
+                <div class="stat-card stat-factura">
+                    <h4 id="statsFactura">0</h4>
+                    <small><i class="fas fa-file-invoice-dollar me-1"></i>Facturas</small>
+                </div>
+                <div class="stat-card stat-alumno">
+                    <h4 id="statsAlumno">0</h4>
+                    <small><i class="fas fa-users me-1"></i>Alumnos</small>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- Secciones de búsqueda -->
+        <div class="search-section">
+            <!-- Búsqueda Factura -->
+            <div class="search-card factura-card">
+                <h3><i class="fas fa-file-invoice-dollar"></i> Búsqueda de tus Facturas</h3>
+                
+                <div class="search-input-group">
+                    <input type="text" 
+                           id="searchFactura" 
+                           class="search-input" 
+                           placeholder="Buscar por: ID Factura, Estado, ID Alumno, Monto..."
+                           autocomplete="off">
+                </div>
+                
+                <button class="search-btn btn-factura" onclick="buscarFactura()">
+                    <i class="fas fa-search"></i> Buscar Facturas
+                </button>
+                
+                <div class="search-tags">
+                    <span class="search-tag tag-factura" onclick="ejemploFactura('Paga')">
+                        <i class="fas fa-check-circle me-1"></i>Estado Paga
+                    </span>
+                    <span class="search-tag tag-factura" onclick="ejemploFactura('Pendiente')">
+                        <i class="fas fa-clock me-1"></i>Estado Pendiente
+                    </span>
+                 
+                       <span class="search-tag tag-factura" onclick="ejemploFactura('1000')">
+                        <i class="fas fa-dollar-sign me-1"></i>Monto
+                    </span>
+                </div>
+            </div>
+
+            <!-- Búsqueda Alumno -->
+            <div class="search-card alumno-card">
+                <h3><i class="fas fa-user-graduate"></i>Búsqueda de tus datos personales</h3>
+                
+                <div class="search-input-group">
+                    <input type="text" 
+                           id="searchAlumno" 
+                           class="search-input" 
+                           placeholder="Buscar por: Nombre, Apellido, Teléfono, Email..."
+                           autocomplete="off">
+                </div>
+                
+                <button class="search-btn btn-alumno" onclick="buscarAlumno()">
+                    <i class="fas fa-search"></i> Buscar en Alumnos
+                </button>
+                
+                <div class="search-tags">
+                    <span class="search-tag tag-alumno" onclick="ejemploAlumno('Juan')">
+                        <i class="fas fa-user me-1"></i>Nombre
+                    </span>
+                    <span class="search-tag tag-alumno" onclick="ejemploAlumno('Pérez')">
+                        <i class="fas fa-user me-1"></i>Apellido
+                    </span>
+                    <span class="search-tag tag-alumno" onclick="ejemploAlumno('@gmail.com')">
+                        <i class="fas fa-envelope me-1"></i>Email
+                    </span>
+                    <span class="search-tag tag-alumno" onclick="ejemploAlumno('555')">
+                        <i class="fas fa-phone me-1"></i>Teléfono
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Spinner de carga -->
+        <div class="loading-spinner" id="loadingSpinner"></div>
+
+        <!-- Resultados -->
+        <div class="results-section">
+            <!-- Resultados Factura -->
+            <div class="results-card">
+                <div class="results-header">
+                    <h4><i class="fas fa-file-invoice-dollar me-2"></i>Resultados Facturas</h4>
+                    <span class="results-count count-factura" id="countFactura">0 resultados</span>
+                </div>
+                <div id="resultsFactura">
+                    <div class="no-results">
+                        <i class="fas fa-file-invoice-dollar fa-3x mb-3"></i>
+                        <h5>Busca facturas</h5>
+                        <p>Usa el campo de búsqueda superior</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Resultados Alumno -->
+            <div class="results-card">
+                <div class="results-header">
+                    <h4><i class="fas fa-user-graduate me-2"></i>Resultados Alumnos</h4>
+                    <span class="results-count count-alumno" id="countAlumno">0 resultados</span>
+                </div>
+                <div id="resultsAlumno">
+                    <div class="no-results">
+                        <i class="fas fa-user-graduate fa-3x mb-3"></i>
+                        <h5>Busca alumnos</h5>
+                        <p>Usa el campo de búsqueda superior</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p class="mb-2"><i class="fas fa-university me-1"></i>Instituto CyberCenter - Gestión Académica</p>
+            <p class="small text-muted mb-0"><i class="fas fa-sync-alt me-1"></i>Datos en tiempo real</p>
+        </div>
+    </div>
+
+    <script src="Alumno.js"></script>
+</body>
+</html>

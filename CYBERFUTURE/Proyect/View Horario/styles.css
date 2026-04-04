@@ -1,0 +1,672 @@
+/* styles.css - Estilos mejorados para Horarios de Cybercenter */
+
+/* Importar Font Awesome */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+
+/* Variables de colores Cybercenter */
+:root {
+    --primary-color: #4800ee;
+    --secondary-color: #7a4bff;
+    --accent-color: #a88aff;
+    --dark-color: #1a0033;
+    --light-color: #f8f9ff;
+    --text-color: #333;
+    --text-light: #777;
+    --white: #ffffff;
+    --gray-light: #f0f2ff;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    --transition: all 0.4s ease;
+    --border-radius: 20px;
+}
+
+/* Reset y estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', 'Roboto', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f5f7ff 0%, #eef1ff 100%);
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Contenedor principal */
+.container {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: 0 20px 60px rgba(72, 0, 238, 0.15);
+    overflow: hidden;
+    max-width: 1000px;
+    width: 100%;
+    border: 2px solid rgba(72, 0, 238, 0.1);
+    animation: fadeInUp 0.8s ease-out;
+}
+
+/* Encabezado */
+.header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: var(--white);
+    padding: 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+}
+
+.header:hover::before {
+    transform: translateX(100%);
+}
+
+.header-icon {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+    animation: pulse 2s infinite;
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    border-radius: 50%;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+@keyframes pulse {
+    0%, 100% { 
+        transform: scale(1) rotate(0deg);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
+    }
+    50% { 
+        transform: scale(1.1) rotate(5deg);
+        box-shadow: 0 0 0 20px rgba(255, 255, 255, 0);
+    }
+}
+
+.header h1 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+    font-weight: 800;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 1;
+}
+
+.header .subtitle {
+    font-size: 1.4rem;
+    opacity: 0.9;
+    font-weight: 300;
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+/* Barra informativa */
+.info-bar {
+    background: rgba(72, 0, 238, 0.05);
+    padding: 20px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    border-bottom: 2px solid var(--gray-light);
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: var(--transition);
+    padding: 10px 20px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.info-item:hover {
+    background: rgba(72, 0, 238, 0.1);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(72, 0, 238, 0.1);
+}
+
+.info-item i {
+    font-size: 1.4rem;
+    color: var(--secondary-color);
+}
+
+/* Contenedor de horarios */
+.horarios-container {
+    padding: 40px;
+}
+
+/* Sección de días */
+.dias-section {
+    margin-bottom: 50px;
+    background: var(--light-color);
+    padding: 35px;
+    border-radius: var(--border-radius);
+    border: 2px solid var(--gray-light);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.dias-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 8px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+}
+
+.dias-section:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(72, 0, 238, 0.15);
+    border-color: var(--accent-color);
+}
+
+.section-title {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid var(--secondary-color);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-weight: 700;
+}
+
+.section-title i {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    color: var(--white);
+    font-size: 1.5rem;
+    box-shadow: 0 5px 15px rgba(72, 0, 238, 0.3);
+}
+
+/* Grid de horarios */
+.horarios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.horario-item {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 18px;
+    border: 2px solid var(--gray-light);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.horario-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+}
+
+.horario-item:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 40px rgba(72, 0, 238, 0.2);
+    border-color: var(--accent-color);
+}
+
+.horario-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.horario-text {
+    font-size: 1.6rem;
+    color: var(--text-color);
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.badge {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+    padding: 10px 22px;
+    border-radius: 25px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 5px 15px rgba(72, 0, 238, 0.3);
+    white-space: nowrap;
+}
+
+.horario-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+}
+
+.horario-icon {
+    width: 65px;
+    height: 65px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: var(--white);
+    flex-shrink: 0;
+    box-shadow: 0 5px 15px rgba(72, 0, 238, 0.3);
+    transition: var(--transition);
+}
+
+.horario-item:hover .horario-icon {
+    transform: rotate(15deg) scale(1.1);
+}
+
+.horario-details {
+    flex: 1;
+}
+
+.horario-horas {
+    font-size: 2.4rem;
+    color: var(--primary-color);
+    font-weight: 800;
+    margin-bottom: 15px;
+    display: block;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    line-height: 1.2;
+}
+
+.horario-desc {
+    color: var(--text-light);
+    font-size: 1.15rem;
+    line-height: 1.7;
+}
+
+.horario-desc strong {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* Específico para sábados */
+.sabado-section {
+    background: linear-gradient(135deg, #fff8f5, #fff0e6);
+    border-color: #ffa94d;
+}
+
+.sabado-section::before {
+    background: linear-gradient(to bottom, #e67e22, #f39c12);
+}
+
+.sabado-section .section-title {
+    color: #e67e22;
+    border-bottom-color: #e67e22;
+}
+
+.sabado-section .section-title i {
+    background: linear-gradient(135deg, #e67e22, #f39c12);
+}
+
+.sabado-section .horario-item {
+    border-color: #ffa94d;
+}
+
+.sabado-section .horario-item::before {
+    background: linear-gradient(90deg, #e67e22, #f39c12, #ffa94d);
+}
+
+.sabado-section .badge {
+    background: linear-gradient(135deg, #e67e22, #f39c12);
+}
+
+.sabado-section .horario-horas {
+    background: linear-gradient(135deg, #e67e22, #f39c12);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.sabado-section .horario-icon {
+    background: linear-gradient(135deg, #e67e22, #f39c12);
+}
+
+/* Contenedor del botón */
+.btn-container {
+    text-align: center;
+    margin-top: 60px;
+    padding-top: 40px;
+    border-top: 2px solid var(--gray-light);
+}
+
+/* Botón de regreso mejorado */
+.btn-cb {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: var(--white);
+    padding: 20px 45px;
+    border-radius: 15px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.3rem;
+    transition: var(--transition);
+    border: 3px solid var(--primary-color);
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(72, 0, 238, 0.3);
+    position: relative;
+    overflow: hidden;
+    min-width: 280px;
+}
+
+.btn-cb::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.7s ease;
+}
+
+.btn-cb:hover::before {
+    left: 100%;
+}
+
+.btn-cb:hover {
+    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 15px 35px rgba(72, 0, 238, 0.4);
+    border-color: var(--accent-color);
+}
+
+.btn-cb:active {
+    transform: translateY(-3px) scale(1.02);
+}
+
+.btn-cb i {
+    font-size: 1.4rem;
+    transition: transform 0.3s ease;
+}
+
+.btn-cb:hover i {
+    transform: rotate(-20deg) translateX(-5px);
+}
+
+/* Indicador visual para horario actual */
+.current-schedule {
+    position: relative;
+    overflow: hidden;
+    animation: highlightPulse 2s infinite;
+}
+
+.current-schedule::after {
+    content: 'AHORA';
+    position: absolute;
+    top: 15px;
+    right: -30px;
+    background: linear-gradient(135deg, #25D366, #1db954);
+    color: white;
+    padding: 6px 40px;
+    transform: rotate(45deg);
+    font-size: 0.9rem;
+    font-weight: bold;
+    box-shadow: 0 3px 10px rgba(37, 211, 102, 0.3);
+    z-index: 10;
+    letter-spacing: 1px;
+}
+
+@keyframes highlightPulse {
+    0%, 100% { 
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4);
+    }
+    50% { 
+        box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+    }
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.horario-item {
+    animation: fadeInUp 0.6s ease forwards;
+    opacity: 0;
+}
+
+.horario-item:nth-child(1) { animation-delay: 0.1s; }
+.horario-item:nth-child(2) { animation-delay: 0.2s; }
+.horario-item:nth-child(3) { animation-delay: 0.3s; }
+.horario-item:nth-child(4) { animation-delay: 0.4s; }
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .container {
+        margin: 10px;
+    }
+    
+    .header {
+        padding: 30px 20px;
+    }
+    
+    .header h1 {
+        font-size: 2.4rem;
+    }
+    
+    .header .subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .header-icon {
+        width: 80px;
+        height: 80px;
+        line-height: 80px;
+        font-size: 2.8rem;
+    }
+    
+    .info-bar {
+        padding: 20px;
+        gap: 25px;
+    }
+    
+    .horarios-container {
+        padding: 30px;
+    }
+    
+    .dias-section {
+        padding: 25px;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    .header h1 {
+        font-size: 2rem;
+    }
+    
+    .header .subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .info-bar {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .info-item {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+    }
+    
+    .horarios-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .section-title {
+        font-size: 1.6rem;
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    .section-title i {
+        width: 50px;
+        height: 50px;
+        font-size: 1.3rem;
+    }
+    
+    .horario-horas {
+        font-size: 2rem;
+    }
+    
+    .horario-text {
+        font-size: 1.4rem;
+    }
+    
+    .btn-cb {
+        min-width: 100%;
+        padding: 18px 30px;
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 25px 15px;
+    }
+    
+    .header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .header-icon {
+        width: 70px;
+        height: 70px;
+        line-height: 70px;
+        font-size: 2.5rem;
+    }
+    
+    .horario-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .horario-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    .horario-icon {
+        margin: 0 auto;
+    }
+    
+    .horario-horas {
+        font-size: 1.8rem;
+    }
+    
+    .horario-desc {
+        font-size: 1.1rem;
+    }
+    
+    .btn-cb {
+        padding: 16px 25px;
+        font-size: 1.1rem;
+    }
+}
+
+/* Mejoras de accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Impresión */
+@media print {
+    body {
+        background: white;
+        padding: 0;
+    }
+    
+    .container {
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+    
+    .btn-cb,
+    .current-schedule::after,
+    .info-item:hover {
+        display: none;
+    }
+    
+    .horario-item {
+        break-inside: avoid;
+    }
+}

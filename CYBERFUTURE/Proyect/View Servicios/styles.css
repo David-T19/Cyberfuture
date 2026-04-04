@@ -1,0 +1,160 @@
+body {
+    background-color: rgb(255, 255, 255);
+    font-family: "Roboto", sans-serif;
+    color: #000000;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* NavBar Mejorada - Igual a tu versión */
+.header {
+    background: linear-gradient(125deg, #4800ee 0%, #7a4bff 50%, #a88aff 100%);
+    padding: 10px 20px;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.header a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 8px 15px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.header a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: width 0.3s ease;
+}
+
+.header a:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+}
+
+.header a:hover::before {
+    width: 100%;
+}
+
+/* Contenedor para las tarjetas en fila */
+.cards-container {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    padding: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Modificación para tarjeta en fila */
+.card-full-image {
+    width: 100%;
+    max-width: 400px;
+    min-width: 320px; /* Ancho mínimo para evitar que se hagan muy pequeñas */
+    flex: 1; /* Permite que las tarjetas crezcan y se adapten */
+    color: white;
+    border-radius: 25px;
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: 550px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Media queries para responsividad */
+@media (max-width: 1200px) {
+    .cards-container {
+        gap: 25px;
+    }
+    
+    .card-full-image {
+        max-width: 350px;
+        min-width: 280px;
+        min-height: 500px;
+    }
+}
+
+@media (max-width: 992px) {
+    .cards-container {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    
+    .card-full-image {
+        flex: 0 1 calc(50% - 20px); /* 2 tarjetas por fila en tablet */
+        max-width: none;
+        min-height: 480px;
+    }
+}
+
+@media (max-width: 768px) {
+    .cards-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+        padding: 15px;
+    }
+    
+    .card-full-image {
+        width: 100%;
+        max-width: 400px;
+        flex: none;
+        min-height: 450px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cards-container {
+        padding: 10px;
+        gap: 20px;
+    }
+    
+    .card-full-image {
+        padding: 1.8rem;
+        min-height: 420px;
+        border-radius: 20px;
+    }
+    
+    .card-full-image .content-glass {
+        padding: 1.5rem;
+    }
+}

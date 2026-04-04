@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Registro e Inicio de Sesión</title>
+     <link rel="stylesheet"type="text/css" href="styles.css"><!--CSS-->  
+   
+</head>
+<body>
+    <nav class="header" id="mainNav">
+        <ul><Li><a href="../Main/index.html" id="iniciolink">INICIO</a></Li>
+        <Li><a href="../View Cursos/Cursos.html" id="cursoslink">CURSOS</a></Li>
+        <Li><a href="../View Acerca de/Acerca de.html" id="acercadelink">ACERCA DE</a></Li>
+        <Li><a href="../View Login/login.html" id="Loginlink">INICIAR SESION</a> 
+        </ul>
+     </nav>
+
+    <div class="container" id="main-container">
+        <div class="nav-buttons">
+            <button class="nav-btn" data-view="login">Iniciar Sesión</button>
+            <button class="nav-btn" data-view="alumno">Registro</button>
+        </div>
+        
+        <!-- Vista de Login -->
+        <div id="login-view" class="view active">
+            <h2>Iniciar Sesión</h2>
+            
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="tipoUsuario">Tipo de Usuario:</label>
+                    <select id="tipoUsuario" required>
+                        <option value="">Selecciona tu rol</option>
+                        <option value="alumno">Alumno</option>
+                        <option value="admin">Administrador</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="loginCorreo">Correo Electrónico:</label>
+                    <input type="email" id="loginCorreo" required placeholder="Juan23@Gmail.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="loginContrasena">Contraseña:</label>
+                    <input type="password" id="loginContrasena" required placeholder="Tu contraseña">
+                </div>
+                
+                <button type="submit">Iniciar Sesión</button>
+            </form>
+            
+            <div id="login-message" class="message"></div>
+            
+            <div class="links">
+                <p>¿No tienes cuenta?</p>
+                <p>
+                   
+                    <a href="#" data-view="alumno">Regístrarse</a>
+                </p>
+            </div>
+        </div>
+        
+      
+        
+        <!-- Vista de Registro Alumno -->
+        <div id="alumno-view" class="view">
+            <h2>Registro de Alumno</h2>
+            
+            <form id="registroAlumnoForm">
+                <div class="form-group">
+                    <label for="nombreAlumno">Nombre:</label>
+                    <input type="text" id="nombreAlumno" name="Nombre_Alumno" required
+                           placeholder="Tu nombre">
+                </div>
+                
+                <div class="form-group">
+                    <label for="apellidoAlumno">Apellido:</label>
+                    <input type="text" id="apellidoAlumno" name="Apellido_Alumno" required
+                           placeholder="Tu apellido">
+                </div>
+                
+                <div class="form-group">
+                    <label for="edadAlumno">Edad:</label>
+                    <input type="number" id="edadAlumno" name="Edad_Alumno" required 
+                           min="16" max="80" placeholder="Tu edad">
+                </div>
+                
+                <div class="form-group">
+                    <label for="telefonoAlumno">Teléfono:</label>
+                    <input type="tel" id="telefonoAlumno" name="Telefono_Alumno" required
+                           placeholder="Ej: 3101234567">
+                </div>
+                
+                <div class="form-group">
+                    <label for="correoAlumno">Correo Electrónico:</label>
+                    <input type="email" id="correoAlumno" name="Correo_Alumno" required
+                           placeholder="tu.correo@ejemplo.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="contrasenaAlumno">Contraseña:</label>
+                    <input type="password" id="contrasenaAlumno" name="Contrasena" required
+                           placeholder="Crea una contraseña segura" minlength="6">
+                </div>
+                
+                <button type="submit" class="success">Registrarse</button>
+            </form>
+            
+            <div id="alumno-message" class="message"></div>
+            
+            <div class="links">
+                <p>¿Ya tienes cuenta? <a href="#" data-view="login">Inicia Sesión</a></p>
+              
+            </div>
+        </div>
+    </div>
+
+    <script src="Login.js"> </script>
+ 
+    
+</body>
+</html>

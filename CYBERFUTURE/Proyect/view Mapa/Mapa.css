@@ -1,0 +1,446 @@
+/* Mapa.css - Estilos mejorados para el mapa de Cybercenter */
+
+/* Importar Font Awesome para iconos */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+
+/* Reset y estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    background: linear-gradient(135deg, #f5f7ff 0%, #eef1ff 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Contenedor principal del mapa */
+.map-container {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(72, 0, 238, 0.15);
+    overflow: hidden;
+    max-width: 900px;
+    width: 100%;
+    transition: all 0.4s ease;
+    border: 2px solid rgba(72, 0, 238, 0.1);
+    position: relative;
+}
+
+.map-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(72, 0, 238, 0.2);
+}
+
+/* Título del mapa */
+.map-title {
+    background: linear-gradient(135deg, #4800ee 0%, #7a4bff 100%);
+    color: white;
+    padding: 25px 30px;
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.map-title::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+}
+
+.map-container:hover .map-title::before {
+    transform: translateX(100%);
+}
+
+/* Contenedor del mapa responsivo */
+.map-wrapper {
+    position: relative;
+    padding-top: 56.25%; /* Relación 16:9 para responsive */
+    height: 0;
+    overflow: hidden;
+    border-bottom: 3px solid #4800ee;
+}
+
+.map-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    transition: transform 0.5s ease;
+}
+
+.map-wrapper iframe:hover {
+    transform: scale(1.02);
+}
+
+/* Información del mapa - DISEÑO A LA IZQUIERDA */
+.map-info {
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 30px;
+    align-items: start;
+    background: linear-gradient(to right, #f8f9ff, #ffffff);
+    position: relative;
+}
+
+/* Línea decorativa a la izquierda */
+.map-info::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 5px;
+    background: linear-gradient(to bottom, #4800ee, #7a4bff, #a88aff);
+    border-radius: 0 3px 3px 0;
+}
+
+/* Columna de información (izquierda) */
+.info-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.map-info p {
+    margin: 0;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px dashed #eef1ff;
+    transition: all 0.3s ease;
+}
+
+.map-info p:hover {
+    color: #4800ee;
+    transform: translateX(5px);
+    border-bottom-color: #a88aff;
+}
+
+.map-info p strong {
+    font-size: 1.3rem;
+    color: #4800ee;
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.map-info p i {
+    color: #7a4bff;
+    font-size: 1.2rem;
+    width: 24px;
+    text-align: center;
+    margin-top: 2px;
+    transition: transform 0.3s ease;
+}
+
+.map-info p:hover i {
+    transform: scale(1.2);
+    color: #4800ee;
+}
+
+/* Columna de botones (derecha) */
+.buttons-column {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    min-width: 220px;
+}
+
+/* Botón de Google Maps */
+.map-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: linear-gradient(135deg, #4285F4 0%, #3367D6 100%);
+    color: white;
+    padding: 16px 25px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.4s ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(66, 133, 244, 0.3);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    min-width: 220px;
+}
+
+.map-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.7s ease;
+}
+
+.map-link:hover::before {
+    left: 100%;
+}
+
+.map-link:hover {
+    background: linear-gradient(135deg, #3367D6 0%, #2851A3 100%);
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(66, 133, 244, 0.4);
+}
+
+.map-link i {
+    font-size: 1.3rem;
+    transition: transform 0.3s ease;
+}
+
+.map-link:hover i {
+    transform: rotate(15deg);
+}
+
+/* Botón de Regresar - ESTILO PERSONALIZADO */
+.btn-cb {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: linear-gradient(135deg, #4800ee 0%, #7a4bff 100%);
+    color: white;
+    padding: 16px 25px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.4s ease;
+    border: 2px solid #4800ee;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(72, 0, 238, 0.3);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    min-width: 220px;
+}
+
+.btn-cb::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+}
+
+.btn-cb:hover::before {
+    transform: translateX(100%);
+}
+
+.btn-cb:hover {
+    background: linear-gradient(135deg, #7a4bff 0%, #4800ee 100%);
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(72, 0, 238, 0.4);
+    border-color: #a88aff;
+}
+
+.btn-cb:active {
+    transform: translateY(-2px) scale(1.02);
+}
+
+/* Efecto de onda al hacer clic */
+@keyframes wave {
+    0% {
+        box-shadow: 0 0 0 0 rgba(72, 0, 238, 0.7);
+    }
+    100% {
+        box-shadow: 0 0 0 20px rgba(72, 0, 238, 0);
+    }
+}
+
+.btn-cb:focus {
+    animation: wave 0.5s ease;
+    outline: none;
+}
+
+/* Indicador de dirección (flecha) */
+.btn-cb::after {
+    content: '↩️';
+    font-size: 1.3rem;
+    margin-right: 5px;
+    transition: transform 0.3s ease;
+}
+
+.btn-cb:hover::after {
+    transform: rotate(-20deg);
+}
+
+/* Badge decorativo en el contenedor */
+.map-container::after {
+    content: '📍';
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    background: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-10px) rotate(10deg);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+    
+    .map-title {
+        padding: 20px;
+        font-size: 1.5rem;
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    
+    .map-info {
+        grid-template-columns: 1fr;
+        padding: 20px;
+        gap: 25px;
+    }
+    
+    .buttons-column {
+        min-width: 100%;
+    }
+    
+    .map-link, .btn-cb {
+        min-width: 100%;
+        padding: 14px 20px;
+        font-size: 1rem;
+    }
+    
+    .map-info p {
+        font-size: 1rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        padding: 8px 0;
+    }
+    
+    .map-info p i {
+        align-self: flex-start;
+    }
+    
+    .map-container::after {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+        top: -10px;
+        right: -10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .map-title {
+        font-size: 1.3rem;
+        padding: 15px;
+    }
+    
+    .map-info {
+        padding: 15px;
+    }
+    
+    .map-info p {
+        font-size: 0.95rem;
+    }
+    
+    .map-link, .btn-cb {
+        padding: 12px 15px;
+        font-size: 0.95rem;
+    }
+}
+
+/* Efectos de carga */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.map-container {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+/* Estilos para datos de contacto reales */
+.contact-details {
+    background: rgba(72, 0, 238, 0.05);
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 10px;
+    border-left: 4px solid #7a4bff;
+}
+
+.contact-details p {
+    border-bottom: none !important;
+    margin: 5px 0 !important;
+}
+
+/* Tooltip para información adicional */
+.map-info p[title]:hover::after {
+    content: attr(title);
+    position: absolute;
+    background: #4800ee;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    z-index: 100;
+    margin-top: 5px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}

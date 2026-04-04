@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Panel de Administración</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="stylesheet"type="text/css" href="../css/estilos.css"><!--CSS-->  
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <div class="logo-container">
+          <i class="bi bi-layers"></i>
+        </div>
+        Panel de Administración
+      </a>
+      
+      <div class="user-info">
+        
+          <button id="btnCerrarSesion">
+                <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
+            </button>
+        </div>
+        
+      </div>
+       
+    </div>
+   
+  </nav>
+
+  <div class="container-main">
+    <div class="header-section">
+      <h1 class="page-title">Panel de Control</h1>
+      <p class="page-subtitle">Gestiona todos los aspectos de tu sistema educativo desde un solo lugar</p>
+    </div>
+
+    <!-- Barra de búsqueda -->
+    <div class="search-container">
+      <div class="input-group">
+        <span class="input-group-text bg-white border-0 ps-4">
+          <i class="bi bi-search text-secondary"></i>
+        </span>
+        <input type="text" class="form-control search-input" id="searchInput" placeholder="Buscar módulo por nombre o descripción...">
+      </div>
+    </div>
+
+    <!-- Filtros por categoría -->
+    <div class="category-filter">
+      <button class="category-btn active" data-category="all">Todos los módulos</button>
+      <button class="category-btn" data-category="primary">Estado</button>
+      <button class="category-btn" data-category="success">Instructores</button>
+      <button class="category-btn" data-category="warning">Estudiantes</button>
+      <button class="category-btn" data-category="info">Otros</button>
+    </div>
+
+    <!-- Grid de módulos CENTRADO con distribución 4-4-2 -->
+    <div class="modules-container">
+      <div class="modules-grid" id="menuContenedor">
+        <!-- Los módulos se cargarán aquí dinámicamente -->
+      </div>
+    </div>
+    
+    <div class="modules-container">
+      <div id="noResults" class="no-results d-none">
+        <i class="bi bi-search no-results-icon"></i>
+        <h4>No se encontraron módulos</h4>
+        <p>Intenta con otros términos de búsqueda o selecciona una categoría diferente</p>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <p class="mb-0">© 2025 Cybercenter. Todos los derechos reservados.</p>
+    </footer>
+  </div>
+
+   <script src="../js/Modulos.js"></script>
+</body>
+</html>

@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Términos y Condiciones | Instituto CyberCenter</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #1a56db;
+            --secondary-color: #1e429f;
+            --accent-color: #7e3af2;
+            --text-color: #333;
+            --light-color: #f8fafc;
+            --border-color: #e2e8f0;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --success-color: #0e9f6e;
+            --warning-color: #f59e0b;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: #f1f5f9;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .logo-img {
+            background-color: white;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .logo-img i {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+        }
+        
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .logo-text span:first-child {
+            font-size: 1.8rem;
+        }
+        
+        .logo-text span:last-child {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            transition: opacity 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .nav-links a:hover {
+            opacity: 0.9;
+        }
+        
+        /* Main Content */
+        .terms-hero {
+            background: linear-gradient(rgba(26, 86, 219, 0.9), rgba(30, 66, 159, 0.9)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .terms-hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .terms-hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.95;
+        }
+        
+        .badge {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin: 0 5px;
+            font-weight: 600;
+        }
+        
+        .terms-container {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .terms-nav {
+            flex: 0 0 300px;
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: var(--shadow);
+            height: fit-content;
+            position: sticky;
+            top: 120px;
+        }
+        
+        .terms-nav h3 {
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border-color);
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .nav-list {
+            list-style: none;
+        }
+        
+        .nav-list li {
+            margin-bottom: 12px;
+        }
+        
+        .nav-list a {
+            text-decoration: none;
+            color: var(--text-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 15px;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+        
+        .nav-list a:hover {
+            background-color: #f1f5f9;
+            color: var(--primary-color);
+        }
+        
+        .nav-list a.active {
+            background-color: #e0f2fe;
+            color: var(--primary-color);
+            font-weight: 600;
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .nav-list i {
+            width: 20px;
+        }
+        
+        .terms-content {
+            flex: 1;
+            background-color: white;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: var(--shadow);
+        }
+        
+        .section {
+            margin-bottom: 40px;
+            scroll-margin-top: 20px;
+        }
+        
+        .section h2 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section p {
+            margin-bottom: 15px;
+        }
+        
+        .section ul, .section ol {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .section li {
+            margin-bottom: 8px;
+        }
+        
+        .programs-highlight {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border: 2px solid var(--primary-color);
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 10px;
+        }
+        
+        .programs-highlight h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .program-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .program-card h4 {
+            color: var(--accent-color);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .program-card ul {
+            margin-left: 30px;
+        }
+        
+        .highlight-box {
+            background-color: #f0f9ff;
+            border-left: 4px solid var(--primary-color);
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .warning-box {
+            background-color: #fef3c7;
+            border-left: 4px solid var(--warning-color);
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .success-box {
+            background-color: #d1fae5;
+            border-left: 4px solid var(--success-color);
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .update-info {
+            background-color: #fef3c7;
+            border: 1px solid #f59e0b;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 40px;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        
+        .update-info i {
+            color: #f59e0b;
+            font-size: 1.5rem;
+            margin-top: 3px;
+        }
+        
+        /* Acceptance Section */
+        .acceptance-section {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            margin-bottom: 60px;
+            text-align: center;
+        }
+        
+        .acceptance-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin: 25px 0;
+        }
+        
+        #acceptCheckbox {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+        
+        .checkbox-container label {
+            font-weight: 500;
+            cursor: pointer;
+        }
+        
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .btn {
+            padding: 14px 30px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1rem;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            min-width: 180px;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .btn-secondary {
+            background-color: #e2e8f0;
+            color: var(--text-color);
+        }
+        
+        .btn-secondary:hover {
+            background-color: #cbd5e1;
+            transform: translateY(-3px);
+        }
+        
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none !important;
+            box-shadow: none !important;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #1e293b;
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            color: #cbd5e1;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .contact-info li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #334155;
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .terms-container {
+                flex-direction: column;
+            }
+            
+            .terms-nav {
+                position: static;
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .terms-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .terms-content, .acceptance-section {
+                padding: 25px;
+            }
+            
+            .buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .logo-text span:first-child {
+                font-size: 1.5rem;
+            }
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--primary-color);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s;
+            z-index: 99;
+            text-decoration: none;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.3s, transform 0.3s;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .back-to-top:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-5px) scale(1.1);
+        }
+        
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .info-table th {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        .info-table td {
+            padding: 12px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .info-table tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+        
+        .info-table tr:hover {
+            background-color: #f1f5f9;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">
+                    <div class="logo-img">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="logo-text">
+                        <span>CyberCenter</span>
+                        <span>Instituto Técnico Profesional</span>
+                    </div>
+                </a>
+                <nav class="nav-links">
+                    <a href="#"><i class="fas fa-home"></i> Inicio</a>
+                    <a href="#"><i class="fas fa-graduation-cap"></i> Programas</a>
+                    <a href="#"><i class="fas fa-envelope"></i> Contacto</a>
+                    <a href="#" class="active"><i class="fas fa-file-contract"></i> Términos</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="terms-hero">
+        <div class="container">
+            <h1>Términos y Condiciones del Instituto CyberCenter</h1>
+            <p>Por favor, lea atentamente estos términos y condiciones antes de matricularse en nuestros programas técnicos. Al acceder o utilizar nuestros servicios educativos, usted acepta estar sujeto a estos términos.</p>
+            <div style="margin-top: 20px;">
+                <span class="badge"><i class="fas fa-user-tie"></i> Auxiliar Administrativo en Sistemas</span>
+                <span class="badge"><i class="fas fa-calculator"></i> Técnico Contable</span>
+                <span class="badge"><i class="fas fa-certificate"></i> Programas Técnicos</span>
+            </div>
+        </div>
+    </section>
+    
+    <div class="container">
+        <!-- Términos y Condiciones -->
+        <div class="terms-container">
+            <!-- Navegación lateral -->
+            <nav class="terms-nav">
+                <h3><i class="fas fa-list"></i> Contenido</h3>
+                <ul class="nav-list">
+                    <li><a href="#introduction" class="active"><i class="fas fa-chevron-right"></i> Introducción</a></li>
+                    <li><a href="#programs"><i class="fas fa-chevron-right"></i> Programas Técnicos</a></li>
+                
+                    <li><a href="#attendance"><i class="fas fa-chevron-right"></i> Asistencia y Evaluación</a></li>
+                    <li><a href="#certification"><i class="fas fa-chevron-right"></i> Certificación</a></li>
+                    <li><a href="#responsibilities"><i class="fas fa-chevron-right"></i> Responsabilidades</a></li>
+                    <li><a href="#cancellation"><i class="fas fa-chevron-right"></i> Cancelación y Reembolsos</a></li>
+                    <li><a href="#privacy"><i class="fas fa-chevron-right"></i> Privacidad y Datos</a></li>
+                    <li><a href="#intellectual"><i class="fas fa-chevron-right"></i> Propiedad Intelectual</a></li>
+                    <li><a href="#changes"><i class="fas fa-chevron-right"></i> Cambios en los Términos</a></li>
+                </ul>
+            </nav>
+            
+            <!-- Contenido principal -->
+            <main class="terms-content">
+                <section id="introduction" class="section">
+                    <h2><i class="fas fa-info-circle"></i> 1. Introducción</h2>
+                    <p>Bienvenido al <strong>Instituto CyberCenter</strong>. Estos términos y condiciones establecen las reglas y regulaciones para la matrícula, participación y certificación en nuestros programas técnicos profesionales.</p>
+                    <p>Al matricularse en cualquiera de nuestros programas, asumimos que acepta estos términos y condiciones en su totalidad. Si no está de acuerdo con alguno de estos términos, por favor no se matricule en nuestros programas.</p>
+                    <div class="highlight-box">
+                        <p><strong>Nota importante:</strong> El Instituto CyberCenter está registrado ante el Ministerio de Educación como institución técnica profesional autorizada para ofrecer programas de formación técnica laboral.</p>
+                    </div>
+                </section>
+                
+                <section id="programs" class="section">
+                    <h2><i class="fas fa-graduation-cap"></i> 2. Programas Técnicos Ofrecidos</h2>
+                    <p>El Instituto CyberCenter ofrece los siguientes programas técnicos:</p>
+                    
+                    <div class="programs-highlight">
+                        <h3><i class="fas fa-book-open"></i> Nuestros Programas Técnicos</h3>
+                        
+                        <div class="program-card">
+                            <h4><i class="fas fa-user-tie"></i> Técnico Auxiliar Administrativo en Sistemas</h4>
+                            <p><strong>Duración:</strong> 12 meses (incluye prácticas profesionales)</p>
+                            <p><strong>Modalidad:</strong> Presencial / Semi-presencial</p>
+                            <p><strong>Contenido principal:</strong></p>
+                            <ul>
+                                <li>Gestión administrativa y ofimática avanzada</li>
+                                <li>Sistemas operativos y mantenimiento de equipos</li>
+                                <li>Redes informáticas básicas</li>
+                                <li>Soporte técnico a usuarios</li>
+                                <li>Gestión de base de datos</li>
+                                <li>Prácticas profesionales supervisadas</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="program-card">
+                            <h4><i class="fas fa-calculator"></i> Técnico Contable</h4>
+                            <p><strong>Duración:</strong> 10 meses (incluye prácticas profesionales)</p>
+                            <p><strong>Modalidad:</strong> Presencial / Semi-presencial</p>
+                            <p><strong>Contenido principal:</strong></p>
+                            <ul>
+                                <li>Principios contables y financieros</li>
+                                <li>Legislación tributaria y laboral</li>
+                                <li>Software contable especializado</li>
+                                <li>Análisis de estados financieros</li>
+                                <li>Nómina y prestaciones sociales</li>
+                                <li>Prácticas profesionales supervisadas</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <p>Nos reservamos el derecho de modificar el contenido curricular de los programas para mantenerlos actualizados con las necesidades del mercado laboral, previa notificación a los estudiantes matriculados.</p>
+                </section>
+                
+                
+                    
+                  
+                
+                <section id="attendance" class="section">
+                    <h2><i class="fas fa-calendar-check"></i> 3. Asistencia y Evaluación</h2>
+                    <p>Para optar por la certificación, los estudiantes deben cumplir con los siguientes requisitos:</p>
+                    
+                    <div class="success-box">
+                        <p><strong>Requisitos de certificación:</strong></p>
+                        <ul>
+                            <li>Mínimo 80% de asistencia a clases teóricas</li>
+                            <li>Mínimo 90% de asistencia a laboratorios y prácticas</li>
+                            <li>Aprobar todas las evaluaciones con calificación mínima de 70/100</li>
+                            <li>Completar las horas de práctica profesional requeridas</li>
+                            <li>Presentar y aprobar el proyecto final integrador</li>
+                        </ul>
+                    </div>
+                    
+                    <p>Las evaluaciones incluyen exámenes teóricos, trabajos prácticos, participación en clase y el proyecto final. Los estudiantes tienen derecho a dos recuperaciones por asignatura, previo pago de los derechos correspondientes.</p>
+                </section>
+                
+                <section id="certification" class="section">
+                    <h2><i class="fas fa-certificate"></i> 4. Certificación</h2>
+                    <p>Al cumplir satisfactoriamente con todos los requisitos académicos y administrativos, el estudiante recibirá:</p>
+                    <ul>
+                        <li><strong>Diploma de Técnico</strong> en el programa correspondiente</li>
+                        <li><strong>Certificado de notas</strong> con el desglose de calificaciones</li>
+                        <li><strong>Constancia de prácticas profesionales</strong> (si aplica)</li>
+                        <li><strong>Credencial de egresado</strong> del Instituto CyberCenter</li>
+                    </ul>
+                    
+                    <div class="highlight-box">
+                        <p><strong>Nota:</strong> La certificación se entregará dentro de los 30 días hábiles posteriores a la finalización del programa, una vez completados todos los trámites administrativos y pagos pendientes.</p>
+                    </div>
+                </section>
+                
+                <section id="responsibilities" class="section">
+                    <h2><i class="fas fa-handshake"></i> 5. Responsabilidades</h2>
+                    
+                    <h3 style="margin-top: 20px; color: var(--accent-color);">Responsabilidades del Instituto</h3>
+                    <ul>
+                        <li>Proporcionar educación de calidad con profesores calificados</li>
+                        <li>Mantener instalaciones adecuadas y equipos actualizados</li>
+                        <li>Proporcionar materiales de estudio básicos</li>
+                        <li>Ofrecer asesoría académica a los estudiantes</li>
+                        <li>Gestionar convenios para prácticas profesionales</li>
+                        <li>Entregar certificación a quienes cumplan los requisitos</li>
+                    </ul>
+                    
+                    <h3 style="margin-top: 20px; color: var(--accent-color);">Responsabilidades del Estudiante</h3>
+                    <ul>
+                        <li>Cumplir con los horarios establecidos</li>
+                        <li>Mantener conducta apropiada dentro del instituto</li>
+                        <li>Cuidar las instalaciones y equipos del instituto</li>
+                        <li>Cumplir con las evaluaciones y trabajos asignados</li>
+                        <li>Realizar los pagos correspondientes en las fechas establecidas</li>
+                        <li>Seguir las normas de seguridad en laboratorios</li>
+                    </ul>
+                </section>
+                
+                <section id="cancellation" class="section">
+                    <h2><i class="fas fa-ban"></i> 6. Cancelación y Reembolsos</h2>
+                    <p>El estudiante puede solicitar la cancelación de su matrícula en los siguientes casos:</p>
+                    
+                    <table class="info-table">
+                        <thead>
+                            <tr>
+                                <th>Situación</th>
+                                <th>Reembolso</th>
+                                <th>Condiciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Cancelación antes del inicio</td>
+                                <td>90% de lo pagado</td>
+                                <td>Solicitud con mínimo 15 días de anticipación</td>
+                            </tr>
+                            <tr>
+                                <td>Cancelación durante primer mes</td>
+                                <td>50% de mensualidades pagadas</td>
+                                <td>Matrícula no reembolsable</td>
+                            </tr>
+                            <tr>
+                                <td>Cancelación después del primer mes</td>
+                                <td>No aplica reembolso</td>
+                                <td>Excepto por fuerza mayor justificada</td>
+                            </tr>
+                            <tr>
+                                <td>Cancelación por parte del Instituto</td>
+                                <td>100% de lo pagado</td>
+                                <td>Si el Instituto cancela el programa</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <p>Todas las solicitudes de cancelación deben presentarse por escrito en la administración del instituto. Los reembolsos se procesarán dentro de los 30 días hábiles posteriores a la solicitud aprobada.</p>
+                </section>
+                
+                <section id="privacy" class="section">
+                    <h2><i class="fas fa-shield-alt"></i> 7. Privacidad y Protección de Datos</h2>
+                    <p>El Instituto CyberCenter cumple con la legislación de protección de datos personales. La información proporcionada por los estudiantes será utilizada exclusivamente para:</p>
+                    <ul>
+                        <li>Gestión académica y administrativa</li>
+                        <li>Comunicación sobre actividades del instituto</li>
+                        <li>Generación de certificados y documentos oficiales</li>
+                        <li>Estadísticas internas y reportes a autoridades educativas</li>
+                    </ul>
+                    
+                    <div class="warning-box">
+                        <p><strong>Confidencialidad:</strong> El Instituto no compartirá información personal de los estudiantes con terceros sin autorización expresa, excepto cuando sea requerido por autoridades competentes.</p>
+                    </div>
+                </section>
+                
+                <section id="intellectual" class="section">
+                    <h2><i class="fas fa-copyright"></i> 8. Propiedad Intelectual</h2>
+                    <p>Todo el material educativo proporcionado por el Instituto CyberCenter (apuntes, presentaciones, software, etc.) es propiedad intelectual del Instituto o de sus licenciantes. Los estudiantes pueden utilizarlo únicamente para su formación personal durante el programa.</p>
+                    <p>Queda prohibida la reproducción, distribución o modificación del material educativo sin autorización por escrito del Instituto.</p>
+                </section>
+                
+                <section id="changes" class="section">
+                    <h2><i class="fas fa-exchange-alt"></i> 9. Cambios en los Términos</h2>
+                    <p>Nos reservamos el derecho de modificar estos términos y condiciones en cualquier momento. Los cambios serán notificados con al menos 30 días de anticipación a través de:</p>
+                    <ul>
+                        <li>Comunicación escrita en el instituto</li>
+                        <li>Correo electrónico a estudiantes activos</li>
+                        <li>Publicación en nuestro sitio web oficial</li>
+                    </ul>
+                    <p>La continuación en el programa después de la entrada en vigencia de los cambios constituye aceptación de los mismos.</p>
+                </section>
+                
+                <div class="update-info">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <div>
+                        <p><strong>Última actualización:</strong> 15 de Diciembre, 2025</p>
+                        <p>Estos términos aplican para todas las matriculas realizadas a partir de esta fecha. Para matriculas anteriores, aplican los términos vigentes al momento de la matrícula.</p>
+                    </div>
+                </div>
+            </main>
+        </div>
+        
+      </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3><i class="fas fa-laptop-code"></i> CyberCenter</h3>
+                    <p>Instituto Técnico Profesional especializado en formación técnica para el mercado laboral actual.</p>
+                    <p style="margin-top: 15px;">Formando profesionales técnicos desde 2005.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3><i class="fas fa-graduation-cap"></i> Programas</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-user-tie"></i> Técnico Auxiliar Administrativo</a></li>
+                        <li><a href="#"><i class="fas fa-calculator"></i> Técnico Auxiliar Contable</a></li>
+                        <li><a href="#"><i class="fas fa-desktop"></i> Técnico en sistemas</a></li>
+                        
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3><i class="fas fa-file-contract"></i> Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" class="active"><i class="fas fa-balance-scale"></i> Términos y Condiciones</a></li>
+                        <li><a href="#"><i class="fas fa-shield-alt"></i> Política de Privacidad</a></li>
+                        <li><a href="#"><i class="fas fa-cookie-bite"></i> Política de Cookies</a></li>
+                        <li><a href="#"><i class="fas fa-gavel"></i> Aviso Legal</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3><i class="fas fa-address-book"></i> Contacto</h3>
+                    <ul class="footer-links contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> Calle 14 # 16-55,Barrio Centro</li>
+                        <li><i class="fas fa-phone"></i>321 3370871</li>
+                        <li><i class="fas fa-envelope"></i>cyber2019center@gmail.com</li>
+                        <li><i class="fas fa-clock"></i> Lunes a Viernes: 8:00 am - 6:00 pm</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Instituto CyberCenter. Todos los derechos reservados. | Registro Ministerial N° 2023-ED-0456</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Botón para volver arriba -->
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+    
+    <script>
+        // Navegación suave
+        document.querySelectorAll('.nav-list a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Remover clase active de todos los enlaces
+                document.querySelectorAll('.nav-list a').forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                // Agregar clase active al enlace clickeado
+                this.classList.add('active');
+                
+                // Obtener el destino
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                // Desplazamiento suave
+                window.scrollTo({
+                    top: targetElement.offsetTop - 100,
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Botón de aceptación de términos
+        const acceptCheckbox = document.getElementById('acceptCheckbox');
+        const acceptButton = document.getElementById('acceptButton');
+        const declineButton = document.getElementById('declineButton');
+        
+        acceptCheckbox.addEventListener('change', function() {
+            acceptButton.disabled = !this.checked;
+        });
+        
+        acceptButton.addEventListener('click', function() {
+            if (!acceptButton.disabled) {
+                alert('¡Gracias por aceptar nuestros Términos y Condiciones! Será redirigido al formulario de matrícula.');
+                // En un caso real, aquí se redirigiría al formulario de matrícula
+                window.location.href = "#";
+            }
+        });
+        
+        declineButton.addEventListener('click', function() {
+            const confirmDecline = confirm('Al declinar nuestros términos, no podrá completar su matrícula. ¿Está seguro?');
+            if (confirmDecline) {
+                alert('Ha declinado nuestros términos. Será redirigido a la página de inicio.');
+                // En un caso real, aquí se redirigiría al usuario
+                window.location.href = "#";
+            }
+        });
+        
+        // Botón para volver arriba
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+            
+            // Actualizar enlace activo al hacer scroll
+            const sections = document.querySelectorAll('.section');
+            const navLinks = document.querySelectorAll('.nav-list a');
+            
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (scrollY >= sectionTop - 150) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+        
+        backToTopButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Inicializar botón de volver arriba
+        window.dispatchEvent(new Event('scroll'));
+    </script>
+</body>
+</html>

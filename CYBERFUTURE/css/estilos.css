@@ -1,0 +1,394 @@
+/* Mantén tu CSS actual del botón y agrega esto: */
+
+#btnCerrarSesion {
+    position: fixed; /* Cambia de absolute a fixed */
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, #ef476f, #ff6b6b);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 15px rgba(239, 71, 111, 0.3);
+    z-index: 1000; /* Aumenta el z-index */
+}
+
+/* Agrega margen al contenido principal */
+.container-main {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    margin-top: 80px; /* Espacio para el botón */
+}
+
+/* O si prefieres ajustar el header */
+.header-section {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: white;
+    padding-top: 60px; /* Espacio arriba del título */
+}
+
+/* Si tienes navbar, ajusta su posición */
+.navbar {
+    background: rgba(26, 26, 46, 0.9) !important;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
+    position: relative;
+    z-index: 999;
+}
+
+
+:root {
+      --primary: #6a11cb;
+      --secondary: #2575fc;
+      --dark: #1a1a2e;
+      --light: #f8f9fa;
+      --success: #00b894;
+      --warning: #fdcb6e;
+      --info: #0984e3;
+      --danger: #d63031;
+      --card-bg: rgba(255, 255, 255, 0.95);
+      --glass: rgba(255, 255, 255, 0.1);
+      --gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      background: var(--gradient);
+      min-height: 100vh;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #333;
+      padding-bottom: 2rem;
+    }
+    
+    .glass-effect {
+      background: var(--glass);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .navbar {
+      background: rgba(26, 26, 46, 0.9) !important;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      padding: 1rem 0;
+    }
+    
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    
+    .logo-container {
+      width: 40px;
+      height: 40px;
+      background: var(--gradient);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+    
+    .container-main {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+    
+    .header-section {
+      text-align: center;
+      margin-bottom: 3rem;
+      color: white;
+    }
+    
+    .page-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    .page-subtitle {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .search-container {
+      max-width: 600px;
+      margin: 0 auto 2.5rem;
+    }
+    
+    .search-input {
+      border-radius: 50px;
+      padding: 15px 25px;
+      border: none;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      font-size: 1rem;
+    }
+    
+    .search-input:focus {
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    }
+    
+    .category-filter {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 2.5rem;
+    }
+    
+    .category-btn {
+      border-radius: 50px;
+      padding: 8px 20px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      background: transparent;
+      color: white;
+      transition: all 0.3s ease;
+      font-weight: 500;
+    }
+    
+    .category-btn:hover, .category-btn.active {
+      background: white;
+      color: var(--primary);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* CONTENEDOR CENTRADO */
+    .modules-container {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+    
+    .modules-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 25px;
+      max-width: 1300px;
+      width: 100%;
+      justify-content: center;
+    }
+    
+    .module-card {
+      background: var(--card-bg);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      transition: all 0.4s ease;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      text-align: center;
+    }
+    
+    .module-card:hover {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    }
+    
+    .card-header {
+      padding: 1.5rem 1.5rem 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+    
+    .card-icon {
+      width: 70px;
+      height: 70px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .card-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin: 0;
+      color: var(--dark);
+    }
+    
+    .card-body {
+      padding: 1.5rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .card-description {
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+    }
+    
+    .card-footer {
+      padding: 0 1.5rem 1.5rem;
+    }
+    
+    .module-btn {
+      width: 100%;
+      padding: 12px 24px;
+      border-radius: 10px;
+      border: none;
+      font-weight: 600;
+      color: white;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: block;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      font-size: 1rem;
+    }
+    
+    .module-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+      color: white;
+    }
+    
+    .no-results {
+      text-align: center;
+      padding: 3rem;
+      grid-column: 1 / -1;
+    }
+    
+    .no-results-icon {
+      font-size: 4rem;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 1rem;
+    }
+    
+    .no-results h4 {
+      color: white;
+      margin-bottom: 0.5rem;
+    }
+    
+    .no-results p {
+      color: rgba(255, 255, 255, 0.8);
+    }
+    
+    .user-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: white;
+    }
+    
+    .user-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--gradient);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+    }
+    
+    .footer {
+      margin-top: 3rem;
+      padding: 1.5rem 0;
+      color: white;
+      text-align: center;
+      opacity: 0.8;
+    }
+    
+    /* Ajustes para el diseño 4-4-2 */
+    .row-1, .row-2 {
+      display: contents;
+    }
+    
+    .module-card:nth-child(-n+4) {
+      grid-row: 1;
+    }
+    
+    .module-card:nth-child(n+5):nth-child(-n+8) {
+      grid-row: 2;
+    }
+    
+    .module-card:nth-child(n+9) {
+      grid-row: 3;
+      grid-column: span 2;
+    }
+    
+    .module-card:nth-child(9) {
+      grid-column: 2 / 3;
+    }
+    
+    .module-card:nth-child(10) {
+      grid-column: 3 / 4;
+    }
+    
+    @media (max-width: 1200px) {
+      .modules-grid {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 1000px;
+      }
+      
+      .module-card:nth-child(n+9) {
+        grid-column: span 1;
+      }
+      
+      .module-card:nth-child(9) {
+        grid-column: auto;
+      }
+      
+      .module-card:nth-child(10) {
+        grid-column: auto;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .modules-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+      }
+      
+      .page-title {
+        font-size: 2rem;
+      }
+      
+      .category-filter {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .category-btn {
+        width: 200px;
+      }
+      
+      .module-card:nth-child(n+9) {
+        grid-column: span 1;
+      }
+    }

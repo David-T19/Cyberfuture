@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="Cursos.css">
+  
+    <title>Cursos - Cybercenter</title>
+</head>
+<body>
+      <nav class="header" id="mainNav">
+        <ul><Li><a href="../Main/index.html" id="iniciolink">INICIO</a></Li>
+        <Li><a href="../View Cursos/Cursos.html" id="cursoslink">CURSOS</a></Li>
+        <Li><a href="../View Acerca de/Acerca de.html" id="acercadelink">ACERCA DE</a></Li>
+    
+        <Li><a href="../View Login/login.html" id="Loginlink">INICIAR SESION</a> 
+        </ul>
+    </nav>
+
+    <div class="cursos-container">
+        <!-- Hero Section -->
+        <section class="cursos-hero">
+            <div class="hero-overlay">
+                <div class="hero-content">
+                    <h1 class="hero-title">Cursos Técnicos</h1>
+                    <p class="hero-subtitle">Formación especializada para el éxito profesional</p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">+500</span>
+                            <span class="stat-text">Estudiantes Formados</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">95%</span>
+                            <span class="stat-text">Inserción Laboral</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-text">Práctico</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Filtros de Cursos -->
+        <div class="filters-container">
+            <div class="filter-options">
+                <button class="filter-btn active" data-filter="all">Todos los Cursos</button>
+                <button class="filter-btn" data-filter="tecnico">Técnicos</button>
+                <button class="filter-btn" data-filter="administrativo">Administrativos</button>
+                 <button class="filter-btn" data-filter="basico">Basicos</button>
+               
+            </div>
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Buscar curso..." class="search-input">
+            </div>
+        </div>
+
+        <!-- Grid de Cursos -->
+        <div class="cursos-grid">
+            <!-- Curso 1: Técnico en Sistemas -->
+            <div class="curso-card" data-category="tecnico">
+                <div class="card-image" style="background-image: url('https://scontent.fvvc3-1.fna.fbcdn.net/v/t39.30808-6/470174267_1709793823201598_4468758656845898397_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEt8lC-ojOFWeYiRjeBNrRzenbgUsZQMNF6duBSxlAw0W8vdoWXdQSO-08Tv9fX8lcxlonkeDc6gWFkJy2OlmC-&_nc_ohc=xrHUZ-eVP44Q7kNvwG5A0et&_nc_oc=Adkns1qauktn2HSb-5NpeB_5-SwA-7jzF67FmTLRtKNNv1zcXqPMZooVC2jHTTrIX1U&_nc_zt=23&_nc_ht=scontent.fvvc3-1.fna&_nc_gid=k0NAbNFl6CKrKS4S6XO3_w&oh=00_Afm4PXM-0XV2Xbu5lRD7dbTIy0Y_ysQc3Cg2ZQF90-vGeQ&oe=693A6B3D')">
+                    <span class="card-badge tecnico">Técnico</span>
+                    <div class="card-overlay"></div>
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3 class="card-title">Técnico en Sistemas</h3>
+                        <div class="card-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span class="rating-text">4.7</span>
+                        </div>
+                    </div>
+                    <p class="card-description">
+                        Formación completa en hardware, software, redes y mantenimiento de equipos de cómputo.
+                    </p>
+                    <div class="card-details">
+                        <div class="detail-item">
+                            <i class="fas fa-clock"></i>
+                            <span>12 meses</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-user-graduate"></i>
+                            <span>Certificado</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-users"></i>
+                            <span>40 estudiantes</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <span class="card-price">$850.000<span>/mes</span></span>
+                        <button class="card-btn">
+                            <i class="fas fa-info-circle"></i> Más Info
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Curso 2: Auxiliar Administrativo -->
+            <div class="curso-card" data-category="administrativo">
+                <div class="card-image" style="background-image: url('https://scontent.fvvc3-1.fna.fbcdn.net/v/t39.30808-6/470136449_1709794079868239_7370303884811042399_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEblV5mcBGmgN6r24NMCLJ4T2HqwmS1ElFPYerCZLUSUVgYCg_ZdIhuF6_UOUxM4tvishferT8Cf66O3_Df1xGS&_nc_ohc=3n3vUDjXJKQQ7kNvwEkTlpw&_nc_oc=AdnzGHEqKwHFF0X2HM8YFexzHJ83DG_Vj_F6P8C0KRltcqOoc23yIpe56KFonxHHcTI&_nc_zt=23&_nc_ht=scontent.fvvc3-1.fna&_nc_gid=BZ5yhKuJRmeaWfkHMW_usQ&oh=00_AfnjGG3vo-0OzXBPpqjY3D5X8wbrdB2ZVecXkAxZqlAlNQ&oe=693A6C43')">
+                    <span class="card-badge administrativo">Administrativo</span>
+                    <div class="card-overlay"></div>
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3 class="card-title">Auxiliar Administrativo</h3>
+                        <div class="card-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span class="rating-text">5.0</span>
+                        </div>
+                    </div>
+                    <p class="card-description">
+                        Capacitación en procesos administrativos, contabilidad básica y gestión documental.
+                    </p>
+                    <div class="card-details">
+                        <div class="detail-item">
+                            <i class="fas fa-clock"></i>
+                            <span>10 meses</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-user-graduate"></i>
+                            <span>Certificado</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-users"></i>
+                            <span>35 estudiantes</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <span class="card-price">$750.000<span>/mes</span></span>
+                        <button class="card-btn">
+                            <i class="fas fa-info-circle"></i> Más Info
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Curso 3: Asistente en Avances Tecnológicos -->
+            <div class="curso-card" data-category="basico">
+                <div class="card-image" style="background-image: url('https://scontent.fvvc3-1.fna.fbcdn.net/v/t39.30808-6/471513914_1720245172156463_5957550053950192757_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHoOBz9WhLHKEqKyVZCJ7GnwFDITRcmx83AUMhNFybHzb4kXJSHRS_6m6Hxljhjr8-w5wAqzlZOh2S5g1P9t0S_&_nc_ohc=_LMB1X2vCbQQ7kNvwGzM6_m&_nc_oc=AdkWYo2-y1czF1dFCc4q5zCaiQxDmRNO_h7lF1txche_rGpGvquoPYhfwz9Lb94Q-d4&_nc_zt=23&_nc_ht=scontent.fvvc3-1.fna&_nc_gid=1AyojQXykwh8PCBxJZGCeA&oh=00_Afm_7a-9afp22j2vigkZkOweF6GGfULY8sZnpcoyiv8PNQ&oe=693A67A6')">
+                    <span class="card-badge tecnologia">Basico</span>
+                    <div class="card-overlay"></div>
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3 class="card-title">Asistente en Avances Tecnológicos</h3>
+                        <div class="card-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span class="rating-text">4.3</span>
+                        </div>
+                    </div>
+                    <p class="card-description">
+                        Especialización en las últimas tecnologías, herramientas digitales y transformación digital.
+                    </p>
+                    <div class="card-details">
+                        <div class="detail-item">
+                            <i class="fas fa-clock"></i>
+                            <span>8 meses</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-user-graduate"></i>
+                            <span>Certificado</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-users"></i>
+                            <span>25 estudiantes</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <span class="card-price">$950.000<span>/mes</span></span>
+                        <button class="card-btn">
+                            <i class="fas fa-info-circle"></i> Más Info
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Curso 4: Auxiliar Contable -->
+            <div class="curso-card" data-category="administrativo">
+                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80')">
+                    <span class="card-badge administrativo">Administrativo</span>
+                    <div class="card-overlay"></div>
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3 class="card-title">Auxiliar Contable</h3>
+                        <div class="card-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span class="rating-text">4.6</span>
+                        </div>
+                    </div>
+                    <p class="card-description">
+                        Formación en contabilidad general, impuestos y sistemas contables computarizados.
+                    </p>
+                    <div class="card-details">
+                        <div class="detail-item">
+                            <i class="fas fa-clock"></i>
+                            <span>9 meses</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-user-graduate"></i>
+                            <span>Certificado</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-users"></i>
+                            <span>30 estudiantes</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <span class="card-price">$800.000<span>/mes</span></span>
+                        <button class="card-btn">
+                            <i class="fas fa-info-circle"></i> Más Info
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+          
+
+            <!-- Curso 6: Especialista en Redes -->
+            <div class="curso-card" data-category="basico">
+                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80')">
+                    <span class="card-badge tecnologia">Basico</span>
+                    <div class="card-overlay"></div>
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3 class="card-title">Operador de Sistemas</h3>
+                        <div class="card-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span class="rating-text">4.9</span>
+                        </div>
+                    </div>
+                    <p class="card-description">
+                        Manejo avanzado de sistemas operativos, redes básicas y soporte técnico.
+                    </p>
+                    <div class="card-details">
+                        <div class="detail-item">
+                            <i class="fas fa-clock"></i>
+                            <span>6 meses</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-user-graduate"></i>
+                            <span>Certificado</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-users"></i>
+                            <span>50 estudiantes</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <span class="card-price">$1.200.000<span>/mes</span></span>
+                        <button class="card-btn">
+                            <i class="fas fa-info-circle"></i> Más Info
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Información Adicional -->
+        <div class="additional-info">
+            <div class="info-box">
+                <i class="fas fa-award"></i>
+                <h3>Certificación laboral por competencias</h3>
+                <p>Todos nuestros cursos incluyen certificación avalada internacionalmente.</p>
+            </div>
+            <div class="info-box">
+                <i class="fas fa-briefcase"></i>
+                <h3>Practicas Empresariales</h3>
+                <p>Acceso a futuros empleos.</p>
+            </div>
+            <div class="info-box">
+                <i class="fas fa-chalkboard-teacher"></i>
+                <h3>Instructores Expertos</h3>
+                <p>Profesionales con amplia experiencia en el sector.</p>
+            </div>
+      
+        </div>
+
+        <!-- Botón de Regreso -->
+        <div class="btn-container">
+            <a href="../Main/index.html" class="btn-cb">
+                <i class="fas fa-arrow-left"></i> Regresar al Inicio
+            </a>
+        </div>
+    </div>
+
+    <script src="Cursos.js"></script>
+</body>
+</html>

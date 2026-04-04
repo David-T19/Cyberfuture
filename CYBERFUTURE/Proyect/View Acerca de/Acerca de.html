@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"type="text/css" href="Acerca.css"><!--CSS-->
+    <title>Document</title>
+     <style>
+        /* Variables de color */
+        :root {
+            --primary: #2c5aa0;
+            --primary-dark: #1e3d73;
+            --accent: #ff6b35;
+            --light: #f8f9fa;
+            --text: #333;
+            --text-light: #666;
+            --shadow: 0 5px 15px rgba(0,0,0,0.1);
+            --radius: 10px;
+            --transition: all 0.3s ease;
+        }
+
+      
+
+        /* Contenedor principal */
+        .cyber-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Encabezado principal */
+        .cyber-header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding: 40px 0;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: var(--radius);
+            color: white;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cyber-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="40" fill="white" opacity="0.05"/></svg>');
+        }
+
+        .cyber-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cyber-header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Secciones de contenido */
+        .content-section {
+            margin-bottom: 60px;
+            padding: 40px;
+            background: white;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-left: 5px solid var(--accent);
+        }
+
+        .content-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .section-title {
+            color: var(--primary);
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--accent);
+            font-size: 2.2rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-title i {
+            color: var(--accent);
+            font-size: 2rem;
+        }
+
+        .content-section p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .content-section strong {
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        /* Grid para las secciones */
+        .sections-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        /* Tarjetas de misión, visión y objetivo */
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            height: 100%;
+            border-top: 4px solid var(--accent);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .card-title {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin: 0;
+        }
+
+        .card-content {
+            color: var(--text-light);
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        /* Estilos para la lista de objetivos */
+        .objectives-list {
+            list-style: none;
+            margin-top: 25px;
+        }
+
+        .objectives-list li {
+            padding: 12px 0;
+            padding-left: 35px;
+            position: relative;
+            border-bottom: 1px solid #eee;
+        }
+
+        .objectives-list li:last-child {
+            border-bottom: none;
+        }
+
+        .objectives-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 25px;
+            height: 25px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        /* Estadísticas */
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 25px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: var(--radius);
+            color: white;
+            transition: var(--transition);
+        }
+
+        .stat-item:hover {
+            transform: scale(1.05);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .cyber-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .cyber-header p {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .content-section {
+                padding: 25px;
+            }
+
+            .sections-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .card {
+                padding: 25px;
+            }
+
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .cyber-header h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .stats-container {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+        }
+
+        /* Animaciones */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .content-section, .card, .stat-item {
+            animation: fadeIn 0.6s ease forwards;
+        }
+
+        .content-section:nth-child(1) { animation-delay: 0.1s; }
+        .content-section:nth-child(2) { animation-delay: 0.2s; }
+        .content-section:nth-child(3) { animation-delay: 0.3s; }
+        .card:nth-child(1) { animation-delay: 0.4s; }
+        .card:nth-child(2) { animation-delay: 0.5s; }
+        .card:nth-child(3) { animation-delay: 0.6s; }
+    </style>
+</head>
+<body>
+     <nav class="header" id="mainNav">
+        <ul><Li><a href="../Main/index.html" id="iniciolink">INICIO</a></Li>
+        <Li><a href="../View Cursos/Cursos.html" id="cursoslink">CURSOS</a></Li>
+        <Li><a href="../View Acerca de/Acerca de.html" id="acercadelink">ACERCA DE</a></Li>
+        <Li><a href="../View Login/login.html" id="Loginlink">INICIAR SESION</a> 
+        </ul>
+     </nav>
+
+     
+
+ <div class="cyber-container">
+        <!-- Encabezado principal -->
+        <header class="cyber-header">
+            <h1>Cybercenter</h1>
+            <p>Formación técnica y tecnológica de excelencia para el mundo digital</p>
+        </header>
+
+        <!-- Sección Quiénes Somos -->
+        <section class="content-section">
+            <h2 class="section-title">
+                <i class="fas fa-users"></i> ¿Quiénes Somos?
+            </h2>
+            <p>En <strong>Cybercenter</strong>, somos un centro educativo especializado en formación técnica y tecnológica, comprometido con el desarrollo de habilidades prácticas y competencias laborales en el área de sistemas y herramientas digitales.</p>
+            <p>Desde nuestros inicios, nos hemos dedicado a ofrecer una educación accesible, de calidad y orientada a las necesidades del mercado actual, preparando a nuestros estudiantes para enfrentar los desafíos profesionales con confianza y eficacia.</p>
+            
+            <!-- Estadísticas -->
+            <div class="stats-container">
+                <div class="stat-item">
+                    <span class="stat-number">15+</span>
+                    <span class="stat-label">Años de experiencia</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">5000+</span>
+                    <span class="stat-label">Estudiantes formados</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">98%</span>
+                    <span class="stat-label">Satisfacción</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">3</span>
+                    <span class="stat-label">Programas principales</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Grid de Misión, Visión y Objetivo -->
+        <div class="sections-grid">
+            <!-- Misión -->
+            <div class="card">
+                <div class="card-header">
+                  
+                    <h3 class="card-title">Nuestra Misión</h3>
+                </div>
+                <div class="card-content">
+                    <p>Formar Técnicos Laborales por Competencias con un sello de excelencia, con alta calidad académica, competitiva y humanística; Técnicos creativos y con capacidad de innovación permanente, generando tecnología de la información.</p>
+                    <p>Con una formación en base ética, valores y principios, capaces de comprometerse con el desarrollo regional a nivel socio-económico y cultural.</p>
+                </div>
+            </div>
+
+            <!-- Visión -->
+            <div class="card">
+                <div class="card-header">
+                 
+                    <h3 class="card-title">Nuestra Visión</h3>
+                </div>
+                <div class="card-content">
+                    <p>Consolidarnos a mediano y largo plazo como una Institución académica por excelencia, líder en la formación de recursos humanos competitivos en el área de informática.</p>
+                    <p>Estimulando permanentemente a nuestros profesionales técnicos a la creatividad, innovación y productividad, adaptándonos a las necesidades cambiantes del mercado tecnológico.</p>
+                </div>
+            </div>
+
+            <!-- Objetivo -->
+            <div class="card">
+                <div class="card-header">
+                  
+                    <h3 class="card-title">Nuestro Objetivo</h3>
+                </div>
+                <div class="card-content">
+                    <p>Capacitar personal íntegro para atender las diversas problemáticas y necesidades del sector productivo, ampliando conocimientos, habilidades y destrezas pertinentes a las competencias del programa de formación.</p>
+                    
+                    <ul class="objectives-list">
+                        <li>Implementar estrategias y metodologías de autogestión</li>
+                        <li>Brindar más oportunidades laborales para nuestros egresados</li>
+                        <li>Capacitar en el manejo de Software y Hardware</li>
+                        <li>Formar técnicos en Asistencia Administrativa competitivos</li>
+                        <li>Especializar en Ensamble y Mantenimiento de equipos</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección de Programas (extra) -->
+        <section class="content-section">
+            <h2 class="section-title">
+                <i class="fas fa-graduation-cap"></i> Nuestros Programas
+            </h2>
+            <p><strong>Ofimática y Sistemas:</strong> Implementar en el campo laboral los conocimientos y conceptos en el manejo de Software y Hardware en computadores, permitiendo resolver problemas técnicos de diferentes características.</p>
+            <p><strong>Asistencia Administrativa:</strong> Formamos Técnicos Laborales por competencias en Asistencia Administrativa con perfiles eficientes y prácticos, capaces de asumir responsabilidades con credibilidad en entornos laborales modernos.</p>
+            <p><strong>Ensamblaje y Mantenimiento:</strong> Capacitamos en el Programa de Ensamble y Mantenimiento de Equipos de cómputo que cada vez se hacen más indispensables en todas las ambientes comerciales, educativos y microempresas.</p>
+        </section>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+   <!-- Footer con Estilo -->
+    <footer class="cyber-footer">
+        <!-- Parte superior del footer -->
+        <div class="footer-top">
+            <div class="footer-container">
+                <!-- Columna 1: Logo y descripción -->
+                <div class="">
+                    <div class="footer-logo"> 
+                        <div class="">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h2>Cyber<span>center</span></h2></br>
+                        <p class="footer-description">
+                            Formación técnica y tecnológica de excelencia para el mundo digital. 
+                            Prepárate para los desafíos profesionales con confianza y eficacia.
+                        </p>
+                    </div>
+                    
+             </div>
+                
+                <!-- Columna 2: Enlaces rápidos -->
+                <div class="footer-column">
+                    <h3 class="footer-title">Enlaces Rápidos</h3>
+                    <div class="footer-links">
+                        <a href="../Main/index.html"><i class="fas fa-home"></i> Inicio</a>
+                        <a href="../View Cursos/Cursos.html"><i class="fas fa-graduation-cap"></i> Cursos</a>
+                        <a href="../View Acerca de/Acerca de.html"><i class="fas fa-info-circle"></i> Acerca de</a>
+                        <a href="../View Servicios/Servicios.html"><i class="fas fa-cogs"></i> Servicios</a>
+                        <a href="../View Login/login.html"><i class="fas fa-sign-in-alt"></i> Iniciar Sesión</a>
+                       
+                    </div>
+                </div>
+                
+                <!-- Columna 3: Programas destacados -->
+                <div class="footer-column">
+                    <h3 class="footer-title">Tecnicos</h3>
+                    <div class="programs-list">
+                      
+                        <div class="program-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <div>
+                                <h4>Tecnico en sistemas</h4>
+                                <p> operar y mantener redes informáticas y sistemas de comunicación</p>
+                            </div>
+                        </div>
+                        <div class="program-item">
+                            <i class="fas fa-database"></i>
+                            <div>
+                                <h4>Tecnico Auxiliar Contable</h4>
+                                <p>soporte directo en la gestión financiera de una empresa</p>
+                            </div>
+                        </div>
+                        <div class="program-item">
+                            <i class="fas fa-mobile-alt"></i>
+                            <div>
+                                <h4>Tecnico Auxiliar Administrativo</h4>
+                                <p>soporte esencial en organizaciones</p>
+                            </div>
+                        </div>
+                    </div>
+                
+                
+                
+                </div>
+                
+                <!-- Columna 4: Contacto -->
+                <div class="footer-column">
+                    <h3 class="footer-title">Contacto</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Ubicación</h4>
+                                <p>Calle 14 #16-55 Barrio Centro</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Teléfono</h4>
+                                <p>321 3370871<br>Lunes a Viernes 6:30 am-7:30 pm</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>cyber2019center@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="opening-hours">
+                        <h4><i class="far fa-clock"></i> Horario de Atención</h4>
+                        <p>Lunes a Viernes: 6:30 am - 7:30 pm</p>
+                        <p>Sábados: 8:00 am - 1:00 pm</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Parte media del footer: Redes sociales -->
+     
+            
+            <!-- Instagram con logo y contador de seguidores -->
+           <div class="footer-middle">
+    <div class="footer-container">
+        <h3>Conéctate con nosotros</h3>
+        <div class="social-icons-simple">
+            <!-- Facebook -->
+            <a href="https://www.facebook.com/p/Cyber-Center-100063657035725/" 
+               class="social-btn facebook-btn"
+               target="_blank"
+               rel="noopener noreferrer">
+                <img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" 
+                     alt="Facebook" 
+                     class="btn-logo">
+                <span>Facebook</span>
+            </a>
+            
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/cybercenter21?igsh=MWhreG1jYTZ1Z2s2cA==" 
+               class="social-btn instagram-btn"
+               target="_blank"
+               rel="noopener noreferrer">
+                <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" 
+                     alt="Instagram" 
+                     class="btn-logo">
+                <span>Instagram</span>
+            </a>
+        </div>
+    </div>
+</div>
+        <!-- Parte inferior del footer -->
+        <div class="footer-bottom">
+            <div class="footer-container">
+                <div class="footer-bottom-content">
+                    <p class="copyright">
+                        &copy; 2025 <strong>Cybercenter</strong>. Todos los derechos reservados.
+                    </p>
+                    
+                    <div class="footer-legal">
+                       
+                        <a href="TyC.html">Términos y Condiciones</a>
+                        <a href="https://www.google.com/maps/place/Cyber+Center/@3.9862356,-73.7599437,17.87z/data=!4m8!3m7!1s0x8e3e394d53ca1e85:0x92582541ff4b2a4e!8m2!3d3.9865119!4d-73.7600827!9m1!1b1!16s%2Fg%2F1hm69x0zz?entry=ttu">Mapa del Sitio</a>
+                    </div>
+           
+                  </div>
+           
+        </div>
+                <div class="footer-credits">
+                    <p>
+                        <i class="fas fa-heart" style="color: #ff4757;"></i> 
+                        Diseñado con pasión por el equipo de Cybercenter
+                    </p>
+                    <p class="version">
+                        v2.5.1 | Última actualización: Diciembre 2025
+                    </p>
+            </div>
+          
+        
+        <!-- Botón para volver arriba -->
+        <button class="back-to-top" id="backToTop" aria-label="Volver arriba">
+            <i class="fas fa-chevron-up"></i>
+        </button>
+    </footer>
+    
+    <!-- JavaScript para funcionalidades -->
+    <script>
+        // Botón para volver arriba
+        const backToTopBtn = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        });
+        
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Efecto de suscripción al boletín
+        const newsletterBtn = document.querySelector('.newsletter-btn');
+        const newsletterInput = document.querySelector('.newsletter-input');
+        
+        newsletterBtn.addEventListener('click', () => {
+            if (newsletterInput.value && newsletterInput.value.includes('@')) {
+                alert('¡Gracias por suscribirte al boletín de Cybercenter!');
+                newsletterInput.value = '';
+            } else {
+                alert('Por favor ingresa un correo electrónico válido.');
+                newsletterInput.focus();
+            }
+        });
+        
+        newsletterInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                newsletterBtn.click();
+            }
+        });
+        
+        // Efecto hover para enlaces
+        document.querySelectorAll('.footer-links a').forEach(link => {
+            link.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateX(5px)';
+            });
+            
+            link.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateX(0)';
+            });
+        });
+    </script>
+</body>
